@@ -12,9 +12,11 @@
   </head>
   <body>
     <div class="container">
-      <h1>Editar Laptop</h1>
+      <h1>Editar Teclado</h1>
+      <a href="{{url_for('teclados')}}">Regresar</a>
       <form action="" method="POST">
         {{forma.csrf_token}}
+
         <p>
           {{forma.marca.label}}<br />
           {{forma.marca(size=30)}}
@@ -22,10 +24,6 @@
         <p>
           {{forma.modelo.label}}<br />
           {{forma.modelo(size=30)}}
-        </p>
-        <p>
-          {{forma.color.label}}<br />
-          {{forma.color(size=30)}}
         </p>
         <p>
           {{forma.precio.label}}<br />

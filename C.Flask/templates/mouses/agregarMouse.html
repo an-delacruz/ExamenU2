@@ -8,13 +8,16 @@
       rel="stylesheet"
       href="{{url_for('static', filename='styles/formulario.css')}}"
     />
-    <title>Editar</title>
+    <title>Agregar</title>
   </head>
   <body>
     <div class="container">
-      <h1>Editar Mouse</h1>
-      <form action="" method="POST">
+      <h1>Agregar Mouse</h1>
+      <a href="{{url_for('mouses')}}">Regresar</a>
+
+      <form action="/mouses/agregar" method="POST">
         {{forma.csrf_token}}
+
         <p>
           {{forma.marca.label}}<br />
           {{forma.marca(size=30)}}

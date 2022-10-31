@@ -4,12 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mouses</title>
+    <title>Index</title>
   </head>
   <body>
-    <h1>Mouses</h1>
+    <h1>Laptops</h1>
     <div>
-      <a href="{{url_for('agregarMouse')}}">Agregar</a>
+      <a href="{{url_for('index')}}">Index</a>
+      <a href="{{url_for('agregarLaptop')}}">Agregar</a>
     </div>
     <div>
       <table border="1">
@@ -17,22 +18,25 @@
           <tr>
             <th>Marca</th>
             <th>Modelo</th>
+            <th>Color</th>
             <th>Precio</th>
             <th>Unidades</th>
             <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
-          {% for mouse in mouses %}
+          {% for laptop in laptops %}
           <tr>
-            <td>{{mouse.marca}}</td>
-            <td>{{mouse.modelo}}</td>
-            <td>{{mouse.precio}}</td>
-            <td>{{mouse.unidades}}</td>
+            <td>{{laptop.marca}}</td>
+            <td>{{laptop.modelo}}</td>
+            <td>{{laptop.color}}</td>
+            <td>{{laptop.precio}}</td>
+            <td>{{laptop.unidades}}</td>
 
             <td>
-              <a href="{{url_for('editarMouse', id=mouse.id)}}">Editar</a>
-              <a href="{{url_for('eliminarMouse', id=mouse.id)}}">Eliminar</a>
+              <a href="{{url_for('detalleLaptop', id=laptop.id)}}">Ver</a>
+              <a href="{{url_for('editarLaptop', id=laptop.id)}}">Editar</a>
+              <a href="{{url_for('eliminarLaptop', id=laptop.id)}}">Eliminar</a>
             </td>
           </tr>
           {% endfor %}

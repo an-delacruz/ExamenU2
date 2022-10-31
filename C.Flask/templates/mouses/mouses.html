@@ -4,12 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index</title>
+    <title>Mouses</title>
   </head>
   <body>
-    <h1>Teclados</h1>
+    <h1>Mouses</h1>
     <div>
-      <a href="{{url_for('agregarTeclado')}}">Agregar</a>
+      <a href="{{url_for('index')}}">Index</a>
+      <a href="{{url_for('agregarMouse')}}">Agregar</a>
     </div>
     <div>
       <table border="1">
@@ -23,18 +24,16 @@
           </tr>
         </thead>
         <tbody>
-          {% for teclado in teclados %}
+          {% for mouse in mouses %}
           <tr>
-            <td>{{teclado.marca}}</td>
-            <td>{{teclado.modelo}}</td>
-            <td>{{teclado.precio}}</td>
-            <td>{{teclado.unidades}}</td>
+            <td>{{mouse.marca}}</td>
+            <td>{{mouse.modelo}}</td>
+            <td>{{mouse.precio}}</td>
+            <td>{{mouse.unidades}}</td>
 
             <td>
-              <a href="{{url_for('editarTeclado', id=teclado.id)}}">Editar</a>
-              <a href="{{url_for('eliminarTeclado', id=teclado.id)}}"
-                >Eliminar</a
-              >
+              <a href="{{url_for('editarMouse', id=mouse.id)}}">Editar</a>
+              <a href="{{url_for('eliminarMouse', id=mouse.id)}}">Eliminar</a>
             </td>
           </tr>
           {% endfor %}
