@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index</title>
+  </head>
+  <body>
+    <h1>Laptops</h1>
+    <div>
+      <a href="{{url_for('agregarLaptop')}}">Agregar</a>
+    </div>
+    <div>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Color</th>
+            <th>Precio</th>
+            <th>Unidades</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for laptop in laptops %}
+          <tr>
+            <td>{{laptop.marca}}</td>
+            <td>{{laptop.modelo}}</td>
+            <td>{{laptop.color}}</td>
+            <td>{{laptop.precio}}</td>
+            <td>{{laptop.unidades}}</td>
+
+            <td>
+              <a href="{{url_for('detalleLaptop', id=laptop.id)}}">Ver</a>
+              <a href="{{url_for('editarLaptop', id=laptop.id)}}">Editar</a>
+              <a href="{{url_for('eliminarLaptop', id=laptop.id)}}">Eliminar</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

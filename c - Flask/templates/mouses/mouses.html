@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouses</title>
+  </head>
+  <body>
+    <h1>Mouses</h1>
+    <div>
+      <a href="{{url_for('agregarMouse')}}">Agregar</a>
+    </div>
+    <div>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Precio</th>
+            <th>Unidades</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for mouse in mouses %}
+          <tr>
+            <td>{{mouse.marca}}</td>
+            <td>{{mouse.modelo}}</td>
+            <td>{{mouse.precio}}</td>
+            <td>{{mouse.unidades}}</td>
+
+            <td>
+              <a href="{{url_for('editarMouse', id=mouse.id)}}">Editar</a>
+              <a href="{{url_for('eliminarMouse', id=mouse.id)}}">Eliminar</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

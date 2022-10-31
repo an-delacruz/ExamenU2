@@ -1,0 +1,16 @@
+body {
+  background-color: lightgray;
+}
+h2 {
+  font-size: 5rem;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+.container p {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  color: lightcoral;
+}

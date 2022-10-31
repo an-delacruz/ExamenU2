@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index</title>
+  </head>
+  <body>
+    <h1>Teclados</h1>
+    <div>
+      <a href="{{url_for('agregarTeclado')}}">Agregar</a>
+    </div>
+    <div>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Precio</th>
+            <th>Unidades</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for teclado in teclados %}
+          <tr>
+            <td>{{teclado.marca}}</td>
+            <td>{{teclado.modelo}}</td>
+            <td>{{teclado.precio}}</td>
+            <td>{{teclado.unidades}}</td>
+
+            <td>
+              <a href="{{url_for('editarTeclado', id=teclado.id)}}">Editar</a>
+              <a href="{{url_for('eliminarTeclado', id=teclado.id)}}"
+                >Eliminar</a
+              >
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

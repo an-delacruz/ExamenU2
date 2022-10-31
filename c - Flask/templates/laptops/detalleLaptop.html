@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laptop</title>
+  </head>
+  <body>
+    <a href="{{url_for('laptops')}}">Regresar</a>
+    <h1>Detalle de la Laptop</h1>
+    <p>Marca: {{laptop.marca}}</p>
+    <p>Modelo: {{laptop.modelo}}</p>
+    <p>Color: {{laptop.color}}</p>
+    <p>Precio: {{laptop.precio}}</p>
+    <p>Unidades: {{laptop.unidades}}</p>
+
+    <a href="{{url_for('editarLaptop', id=laptop.id)}}">Editar</a>
+    <a href="{{url_for('eliminarLaptop', id=laptop.id)}}">Eliminar</a>
+  </body>
+</html>
