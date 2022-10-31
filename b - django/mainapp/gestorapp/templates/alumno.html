@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <table border = "1">
+            <thead>
+                <tr>
+                    <th>Id Alumno</th>
+                    <th>Nombre</th>
+                    <th>Materia</th>
+                    <th>Domicilio</th>
+                    <th colspan="3">Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for alumno in Alumno%}
+                <tr>
+                    <td>{{alumno.id}}</td>
+                    <td>{{alumno.nombre}}</td>
+                    <td>{{alumno.materia}}</td>
+                    <td>{{alumno.domicilio}}</td>
+                    <td><a href="editar_alumno/{{alumno.id}}">Editar</a></td>
+                    <td><a href="eliminar_alumno/{{alumno.id}}">Eliminar</a></td>
+                    <td><a href="detalle_alumno/{{alumno.id}}">Consulta</a></td>
+                                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+        <a href="agregar_alumno">Agregar</a>
+        <a href="{% url 'index' %}">Menu Principal</a>
+
+    </div>
+</body>
+</html>
